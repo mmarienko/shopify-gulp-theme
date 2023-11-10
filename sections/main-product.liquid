@@ -3,14 +3,14 @@
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
 >
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-  {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
-  {{ 'component-slider.css' | asset_url | stylesheet_tag }}
-  {{ 'component-rating.css' | asset_url | stylesheet_tag }}
-  {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'section-main-product.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-accordion.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-slider.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-rating.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-deferred-media.min.css' | asset_url | stylesheet_tag }}
   {%- if product.quantity_price_breaks_configured? -%}
-    {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+    {{ 'component-volume-pricing.min.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
 
   {%- style -%}
@@ -27,23 +27,23 @@
     }
   {%- endstyle -%}
 
-  <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-info.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.min.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
-    <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'show-more.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'price-per-item.min.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
   {% if section.settings.image_zoom == 'hover' %}
-    <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
+    <script id="EnableZoomOnHover-main" src="{{ 'magnify.min.js' | asset_url }}" defer="defer"></script>
   {% endif %}
   {%- if request.design_mode -%}
-    <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'theme-editor.min.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
-    {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+    {{ 'component-product-model.min.css' | asset_url | stylesheet_tag }}
     <link
       id="ModelViewerStyle"
       rel="stylesheet"
@@ -54,7 +54,7 @@
     <link
       id="ModelViewerOverride"
       rel="stylesheet"
-      href="{{ 'component-model-viewer-ui.css' | asset_url }}"
+      href="{{ 'component-model-viewer-ui.min.css' | asset_url }}"
       media="print"
       onload="this.media='all'"
     >
@@ -521,11 +521,11 @@
                     </div>
                   </aside>
                 {%- endif -%}
-                {{ 'component-card.css' | asset_url | stylesheet_tag }}
-                {{ 'component-complementary-products.css' | asset_url | stylesheet_tag }}
+                {{ 'component-card.min.css' | asset_url | stylesheet_tag }}
+                {{ 'component-complementary-products.min.css' | asset_url | stylesheet_tag }}
                 {%- if block.settings.enable_quick_add -%}
-                  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-                  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+                  {{ 'quick-add.min.css' | asset_url | stylesheet_tag }}
+                  <script src="{{ 'quick-add.min.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
               </product-recommendations>
             {%- when 'icon-with-text' -%}
@@ -577,15 +577,15 @@
   {%- endfor -%}
 
   {%- if product.media.size > 0 -%}
-    <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'product-modal.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'media-gallery.min.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
   {%- if first_3d_model -%}
     <script type="application/json" id="ProductJSON-{{ product.id }}">
       {{ product.media | where: 'media_type', 'model' | json }}
     </script>
-    <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+    <script src="{{ 'product-model.min.js' | asset_url }}" defer></script>
   {%- endif -%}
 
   <script>

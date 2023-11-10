@@ -1,29 +1,29 @@
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-menu.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-items.min.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.predictive_search_enabled -%}
-  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-price.min.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 {%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
+  <link rel="stylesheet" href="{{ 'component-mega-menu.min.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'component-mega-menu.min.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 
 {%- if settings.cart_type == "drawer" -%}
-  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
-  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
-  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart-drawer.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.min.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.min.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-menu.min.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-search.min.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-menu-drawer.min.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-notification.min.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-items.min.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
   header-drawer {
@@ -109,12 +109,12 @@
   }
 {%- endstyle -%}
 
-<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-disclosure.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-form.min.js' | asset_url }}" defer="defer"></script>
 {%- if settings.cart_type == "drawer" -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'cart-drawer.min.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">

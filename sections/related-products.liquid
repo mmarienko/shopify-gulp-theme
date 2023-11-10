@@ -1,9 +1,9 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-related-products.min.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+  {{ 'mask-blobs.min.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {%- style -%}

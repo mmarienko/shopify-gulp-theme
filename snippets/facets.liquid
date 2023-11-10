@@ -12,8 +12,8 @@
   {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %}
 {% endcomment %}
 
-{{ 'component-show-more.css' | asset_url | stylesheet_tag }}
-{{ 'component-visual-display.css' | asset_url | stylesheet_tag }}
+{{ 'component-show-more.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-visual-display.min.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
@@ -109,7 +109,7 @@
               </div>
             {%- endif -%}
 
-            <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
+            <script src="{{ 'show-more.min.js' | asset_url }}" defer="defer"></script>
             {% comment %} Filters for both horizontal and vertical filter {% endcomment %}
             {%- for filter in results.filters -%}
               {% liquid

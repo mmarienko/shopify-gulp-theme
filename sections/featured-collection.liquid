@@ -1,17 +1,17 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.min.css' | asset_url | stylesheet_tag }}
 
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
-{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.min.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.min.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+  {{ 'mask-blobs.min.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {%- if section.settings.enable_quick_add -%}
-  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  {{ 'quick-add.min.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.min.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {%- style -%}

@@ -1,6 +1,6 @@
-{{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'customer.min.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'customer.js' | asset_url }}" defer></script>
+<script src="{{ 'customer.min.js' | asset_url }}" defer></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {

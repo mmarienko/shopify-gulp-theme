@@ -1,5 +1,5 @@
-{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-slideshow.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.min.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign social_icons = true
@@ -15,7 +15,7 @@
 -%}
 
 {% if social_icons %}
-  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+  {{ 'component-list-social.min.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
 <div
@@ -125,7 +125,7 @@
         </div>
       </slideshow-component>
       {%- if request.design_mode -%}
-        <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'theme-editor.min.js' | asset_url }}" defer="defer"></script>
         <style>
           /* theme editor power preview fix */
           .announcement-bar-slider .slider__slide[aria-hidden='true'] {

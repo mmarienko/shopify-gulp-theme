@@ -28,11 +28,11 @@
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'constants.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.min.js' | asset_url }}" defer="defer"></script>
     {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'animations.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {{ content_for_header }}
@@ -42,6 +42,8 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
+
+    {{ 'tailwind-output.min.css' | asset_url | stylesheet_tag }}
 
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
@@ -251,7 +253,7 @@
       }
     {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'base.min.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -261,14 +263,14 @@
     {%- endunless -%}
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-      {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
-      <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+      {{ 'component-localization-form.min.css' | asset_url | stylesheet_tag: preload: true }}
+      <script src="{{ 'localization-form.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
       <link
         rel="stylesheet"
-        href="{{ 'component-predictive-search.css' | asset_url }}"
+        href="{{ 'component-predictive-search.min.css' | asset_url }}"
         media="print"
         onload="this.media='all'"
       >
@@ -346,7 +348,7 @@
     </script>
 
     {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'predictive-search.min.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
 </html>

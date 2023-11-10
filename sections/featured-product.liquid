@@ -1,10 +1,10 @@
-{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
-{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
-{{ 'component-rating.css' | asset_url | stylesheet_tag }}
-{{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-product.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-accordion.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.min.css' | asset_url | stylesheet_tag }}
+{{ 'component-volume-pricing.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -20,9 +20,9 @@
   }
 {%- endstyle -%}
 
-<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-info.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'show-more.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'price-per-item.min.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   assign product = section.settings.product
@@ -40,7 +40,7 @@
 
 {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
 {%- if first_3d_model -%}
-  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  {{ 'component-product-model.min.css' | asset_url | stylesheet_tag }}
   <link
     id="ModelViewerStyle"
     rel="stylesheet"
@@ -51,7 +51,7 @@
   <link
     id="ModelViewerOverride"
     rel="stylesheet"
-    href="{{ 'component-model-viewer-ui.css' | asset_url }}"
+    href="{{ 'component-model-viewer-ui.min.css' | asset_url }}"
     media="print"
     onload="this.media='all'"
   >
@@ -591,19 +591,19 @@
   </div>
 </section>
 
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.min.js' | asset_url }}" defer="defer"></script>
 {%- if section.settings.image_zoom == 'hover' -%}
-  <script id="EnableZoomOnHover-featured" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
+  <script id="EnableZoomOnHover-featured" src="{{ 'magnify.min.js' | asset_url }}" defer="defer"></script>
 {%- endif %}
 {%- if request.design_mode -%}
-  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme-editor.min.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {%- if first_3d_model -%}
   <script type="application/json" id="ProductJSON-{{ product.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
-  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+  <script src="{{ 'product-model.min.js' | asset_url }}" defer></script>
 {%- endif -%}
 
 {%- liquid
@@ -687,8 +687,8 @@
 </script>
 
 {% if product.media.size > 0 %}
-  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-modal.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'media-gallery.min.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 
 {% schema %}
